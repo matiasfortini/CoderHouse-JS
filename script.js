@@ -1,20 +1,23 @@
-//Ingresar productos
+//VARIABLES
 let idProducto = 0
 let producto
 let talle
 let stock = 0
 let precio
 
+let inicio = confirm ("Desea ingresar nuevos productos?")
+
+//INGRESO DE DATOS Y VALIDACIÓN
 function ingresoDatos () {
     do {
 
         producto = prompt ("Ingrese producto...").toLowerCase()
     
-        if (producto != "remera" && producto != "buzo" && producto != "pantalon" && producto != "gorra") {
+        if (producto != "remera" && producto != "buzo" && producto != "pantalon" && producto != "campera") {
             alert ("No trabajamos con ese producto")
         }
     
-    }while (producto != "remera" && producto != "buzo" && producto != "pantalon" && producto != "gorra")
+    }while (producto != "remera" && producto != "buzo" && producto != "pantalon" && producto != "campera")
 
     do {
 
@@ -39,13 +42,15 @@ function ingresoDatos () {
 
 let continuar = true
 
+
+//BUCLE
 while (continuar) {
 
     idProducto++
 
     ingresoDatos ()
 
-    //AGREGAR PRECIO DE FORMA AUTOMÁTICA
+    //AGREGA PRECIO DE PRODUCTO DE FORMA AUTOMÁTICA
     switch (producto) {
         case "remera":
             precio = 2500
@@ -59,8 +64,8 @@ while (continuar) {
             precio = 4500
             break
 
-        case "gorra":
-            precio = 1200
+        case "campera":
+            precio = 5000
             break
 
         default:
@@ -68,5 +73,6 @@ while (continuar) {
     }
 
     console.log ("ID: " + idProducto + ", " + "Producto: " + producto + ", " + "Talle: " + talle + ", " + "Stock: " + stock + ", " + "Precio: $" + precio)
+    
     continuar = confirm ("Desea agregar otro producto?")
 }
