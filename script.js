@@ -1,7 +1,6 @@
 //VARIABLES
 let idProducto = 0
 let producto
-let talle
 let stock = 0
 let precio
 
@@ -27,7 +26,7 @@ function ingresoDatos () {
             alert ("No trabajamos con ese talle")
         }
     
-    }while (talle != "S" && talle != "M" && talle != "L" && talle != "XL" && talle != "XXL")
+    }while (talle != "S" && talle != "M" && talle != "L" && talle != "XL" && talle != "XXL") //Esto no se si está bien, pero es la única manera que encontre de validar un número entero
 
     do {
 
@@ -40,10 +39,9 @@ function ingresoDatos () {
     }while (stock == null || /\D/.test(stock) || stock == "")
 }
 
+//BUCLE
 let continuar = true
 
-
-//BUCLE
 while (continuar) {
 
     idProducto++
