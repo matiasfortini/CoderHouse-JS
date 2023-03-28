@@ -33,7 +33,7 @@ function dataEntry () {
             alert ("No trabajamos con ese talle")
         }
     
-    }while (size != "S" && size != "M" && size != "L" && size != "XL" && size != "XXL") //Esto no se si está bien, pero es la única manera que encontre de validar un número entero
+    }while (size != "S" && size != "M" && size != "L" && size != "XL" && size != "XXL") 
 
     do {
 
@@ -43,7 +43,7 @@ function dataEntry () {
             alert ("Ingrese un número entero por favor")
         }
     
-    }while (stock == null || /\D/.test(stock) || stock == "")
+    }while (stock == null || /\D/.test(stock) || stock == "") //Esto no se si está bien, pero es la única manera que encontre de validar un número entero
 }
 
 //BUCLE
