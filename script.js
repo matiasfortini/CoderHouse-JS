@@ -14,7 +14,7 @@ let price
 let start = confirm ("Desea ingresar nuevos productos?")
 
 //INGRESO DE DATOS Y VALIDACIÓN
-function ingresoDatos () {
+function dataEntry () {
     do {
 
         product = prompt ("Ingrese el producto...").toLowerCase()
@@ -53,7 +53,7 @@ while (next) {
 
     idProduct++
 
-    ingresoDatos ()
+    dataEntry ()
 
     //AGREGA PRECIO DE PRODUCTO DE FORMA AUTOMÁTICA
     switch (product) {
