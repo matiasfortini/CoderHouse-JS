@@ -6,34 +6,34 @@
 */
 
 //VARIABLES
-let idProducto = 0
-let producto
+let idProduct = 0
+let product
 let stock = 0
-let precio
+let price
 
-let inicio = confirm ("Desea ingresar nuevos productos?")
+let start = confirm ("Desea ingresar nuevos productos?")
 
 //INGRESO DE DATOS Y VALIDACIÓN
 function ingresoDatos () {
     do {
 
-        producto = prompt ("Ingrese el producto...").toLowerCase()
+        product = prompt ("Ingrese el producto...").toLowerCase()
     
-        if (producto != "remera" && producto != "buzo" && producto != "pantalon" && producto != "campera") {
+        if (product != "remera" && product != "buzo" && product != "pantalon" && product != "campera") {
             alert ("No trabajamos con ese producto")
         }
     
-    }while (producto != "remera" && producto != "buzo" && producto != "pantalon" && producto != "campera")
+    }while (product != "remera" && product != "buzo" && product != "pantalon" && product != "campera")
 
     do {
 
-        talle = prompt ("Ingrese talle del producto...").toUpperCase()
+        size = prompt ("Ingrese talle del producto...").toUpperCase()
     
-        if (talle != "S" && talle != "M" && talle != "L" && talle != "XL" && talle != "XXL") {
+        if (size != "S" && size != "M" && size != "L" && size != "XL" && size != "XXL") {
             alert ("No trabajamos con ese talle")
         }
     
-    }while (talle != "S" && talle != "M" && talle != "L" && talle != "XL" && talle != "XXL") //Esto no se si está bien, pero es la única manera que encontre de validar un número entero
+    }while (size != "S" && size != "M" && size != "L" && size != "XL" && size != "XXL") //Esto no se si está bien, pero es la única manera que encontre de validar un número entero
 
     do {
 
@@ -47,37 +47,37 @@ function ingresoDatos () {
 }
 
 //BUCLE
-let continuar = true
+let next = true
 
-while (continuar) {
+while (next) {
 
-    idProducto++
+    idProduct++
 
     ingresoDatos ()
 
     //AGREGA PRECIO DE PRODUCTO DE FORMA AUTOMÁTICA
-    switch (producto) {
+    switch (product) {
         case "remera":
-            precio = 2500
+            price = 2500
             break
 
         case "buzo":
-            precio = 6000
+            price = 6000
             break
         
         case "pantalon":
-            precio = 4500
+            price = 4500
             break
 
         case "campera":
-            precio = 5000
+            price = 5000
             break
 
         default:
-            precio = " "
+            price = " "
     }
 
-    console.log ("ID: " + idProducto + ", " + "Producto: " + producto + ", " + "Talle: " + talle + ", " + "Stock: " + stock + ", " + "Precio: $" + precio)
+    console.log ("ID: " + idProduct + ", " + "Producto: " + product + ", " + "Talle: " + size + ", " + "Stock: " + stock + ", " + "Precio: $" + price)
     
-    continuar = confirm ("Desea agregar otro producto?")
+    next = confirm ("Desea agregar otro producto?")
 }
