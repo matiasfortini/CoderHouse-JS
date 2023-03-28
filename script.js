@@ -1,3 +1,10 @@
+/*PRODUCTOS
+- Remera
+- Buzo
+- Pantalon
+- Campera
+*/
+
 //VARIABLES
 let idProducto = 0
 let producto
@@ -10,7 +17,7 @@ let inicio = confirm ("Desea ingresar nuevos productos?")
 function ingresoDatos () {
     do {
 
-        producto = prompt ("Ingrese producto...").toLowerCase()
+        producto = prompt ("Ingrese el producto...").toLowerCase()
     
         if (producto != "remera" && producto != "buzo" && producto != "pantalon" && producto != "campera") {
             alert ("No trabajamos con ese producto")
