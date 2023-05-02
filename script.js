@@ -14,7 +14,7 @@ let productos = JSON.parse(localStorage.getItem('productos')) || [];
 
 const mostrarProductos = () => {
     const contenedorProductos = document.querySelector("#contenedorProductos");
-    contenedorProductos.innerHTML = ""; // Limpiamos el contenedor de productos
+    contenedorProductos.innerHTML = "";
   
     productos.forEach((producto) => {
       const tarjetaProducto = document.createElement("div");
@@ -74,8 +74,7 @@ const crearProducto = () => {
 const abrirModalEditar = (producto) => {
     const modal = document.querySelector("#modal");
     modal.style.display = "block";
-  
-    // Obtener los elementos del formulario del modal
+    
     const form = document.querySelector("#editarProducto");
     const idProductoEditar = document.querySelector("#idProductoEditar");
     const categoriaEditar = document.querySelector("#categoriaEditar");
@@ -83,16 +82,14 @@ const abrirModalEditar = (producto) => {
     const colorEditar = document.querySelector("#colorEditar");
     const precioEditar = document.querySelector("#precioEditar");
     const stockEditar = document.querySelector("#stockEditar");
-  
-    // Establecer los valores de los campos del formulario con los datos del producto
+
     idProductoEditar.value = producto.id;
     categoriaEditar.value = producto.categoria;
     diseñoEditar.value = producto.diseño;
     colorEditar.value = producto.color;
     precioEditar.value = producto.precio;
     stockEditar.value = producto.stock;
-  
-    // Agregar evento 'submit' al formulario de edición
+    
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         const datos = e.target.elements;
@@ -105,10 +102,8 @@ const abrirModalEditar = (producto) => {
         editarProducto(idProducto, categoria, diseño, color, precio, stock);
         modal.style.display = "none";
     });
-
   
     const editarProducto = (idProducto, categoria, diseño, color, precio, stock) => {
-    // Buscar el producto en el array 'productos' y actualizar sus valores
     productos = productos.map((producto) => {
       if (producto.id === idProducto) {
         return new Producto(idProducto, categoria, diseño, color, precio, stock);
@@ -122,11 +117,7 @@ const abrirModalEditar = (producto) => {
         const modal = document.querySelector("#modal");
         modal.style.display = "none";
     });
-  
-    // Guardar el array 'productos' en el almacenamiento local (localStorage)
     localStorage.setItem("productos", JSON.stringify(productos));
-  
-    // Mostrar los productos actualizados en la pantalla
     mostrarProductos();
     };
 };     
